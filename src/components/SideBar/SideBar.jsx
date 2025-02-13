@@ -95,17 +95,17 @@ export default function SideBar({ open, handleDrawerClose }) {
     {
       text: "Manage Team",
       icon: <PeopleAltOutlinedIcon />,
-      path: "/learn",
+      path: "/team",
     },
     {
       text: "Contacts Information",
       icon: <ContactsOutlinedIcon />,
-      path: "/contactes",
+      path: "/contacts",
     },
     {
       text: "Invoices Balances",
       icon: <ReceiptOutlinedIcon />,
-      patch: "/invoices",
+      path: "/invoices",
     },
   ];
   const Arr2 = [
@@ -185,7 +185,7 @@ export default function SideBar({ open, handleDrawerClose }) {
         <Divider />
         <List>
           {Arr1.map((item) => (
-            <ListItem key={item.path} disablePadding sx={{ display: "block" }}>
+            <ListItem key={item.text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 onClick={() => {
                   navigate(item.path);
