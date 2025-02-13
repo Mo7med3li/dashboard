@@ -29,7 +29,8 @@ import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import ShowChartOutlinedIcon from "@mui/icons-material/ShowChartOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { grey } from "@mui/material/colors";
 export default function SideBar({ open, handleDrawerClose }) {
   const theme = useTheme();
   const drawerWidth = 240;
@@ -140,7 +141,7 @@ export default function SideBar({ open, handleDrawerClose }) {
       path: "/geography",
     },
   ];
-
+  let location = useLocation();
   return (
     <>
       <Drawer variant="permanent" open={open}>
@@ -194,6 +195,12 @@ export default function SideBar({ open, handleDrawerClose }) {
                   {
                     minHeight: 48,
                     px: 2.5,
+                    bgcolor:
+                      item.path === location.pathname
+                        ? theme.palette.mode === "dark"
+                          ? grey[800]
+                          : grey[300]
+                        : "",
                   },
                   open
                     ? {
@@ -249,6 +256,12 @@ export default function SideBar({ open, handleDrawerClose }) {
                   {
                     minHeight: 48,
                     px: 2.5,
+                    bgcolor:
+                      item.path === location.pathname
+                        ? theme.palette.mode === "dark"
+                          ? grey[800]
+                          : grey[300]
+                        : "",
                   },
                   open
                     ? {
@@ -304,6 +317,12 @@ export default function SideBar({ open, handleDrawerClose }) {
                   {
                     minHeight: 48,
                     px: 2.5,
+                    bgcolor:
+                      item.path === location.pathname
+                        ? theme.palette.mode === "dark"
+                          ? grey[800]
+                          : grey[300]
+                        : "",
                   },
                   open
                     ? {
